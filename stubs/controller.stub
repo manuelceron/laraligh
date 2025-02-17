@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\{{modelName}};
+use Illuminate\Http\Request;
+
+class {{modelName}}Controller extends Controller
+{
+    public function index()
+    {
+        return {{modelName}}::all();
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'status' => 'required|string',
+            'due_date' => 'nullable|string',
+        ]);
+
+        $todo = {{modelName}}::create($validated);
+
+        return response()->json($todo, 201);
+    }
+
+    public function show($id)
+    {
+        $todo = {{modelName}}::findOrFail($id);
+        return response()->json($todo);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'status' => 'required|string',
+            'due_date' => 'nullable|string',
+        ]);
+
+        $todo = {{modelName}}::findOrFail($id);
+        $todo->update($validated);
+
+        return response()->json($todo);
+    }
+
+    public function destroy($id)
+    {
+        $todo = {{modelName}}::findOrFail($id);
+        $todo->delete();
+
+        return response()->json(null, 204);
+    }
+}
