@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class {{modelName}} extends Model
 {
     use HasFactory;
-
+    protected $table = '{{name}}';
     protected $fillable = [
         // Aquí van los campos del modelo
     ];
