@@ -26,8 +26,9 @@
     "authors": [
         {
             "name": "Manuel Cerón",
-            "email": "manuel.ceron@sam.net.co",
-            "homepage": "https://www.sam.net.co"
+            "email": "manuelceron@example.com",
+            "homepage": "https://www.manuelceron.com"
         }
-    ]
+    ],
+    "license": "MIT"
 }
