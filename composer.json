@@ -1,10 +1,10 @@
 {
-    "name": "vendor/laraligh",
+    "name": "manuelceron/laraligh",
     "description": "Un paquete Laravel para modelos dinámicos y generación de APIs ligeras.",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Vendor\\Laraligh\\": "src/"
+            "Manuelceron\\Laraligh\\": "src/"
         }
     },
     "require": {
@@ -14,13 +14,20 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Vendor\\Laraligh\\LaralighServiceProvider"
+                "Manuelceron\\Laraligh\\LaralighServiceProvider"
             ]
         }
     },
     "scripts": {
         "post-install-cmd": [
-            "php artisan vendor:publish --provider=\"Vendor\\Laraligh\\LaralighServiceProvider\""
+            "php artisan vendor:publish --provider=\"Manuelceron\\Laraligh\\LaralighServiceProvider\""
         ]
-    }
+    },
+    "authors": [
+        {
+            "name": "Manuel Cerón",
+            "email": "manuel.ceron@sam.net.co",
+            "homepage": "https://www.sam.net.co"
+        }
+    ]
 }
