@@ -1,0 +1,26 @@
+{
+    "name": "vendor/laraligh",
+    "description": "Un paquete Laravel para modelos dinámicos y generación de APIs ligeras.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Laraligh\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vendor\\Laraligh\\LaralighServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan vendor:publish --provider=\"Vendor\\Laraligh\\LaralighServiceProvider\""
+        ]
+    }
+}
