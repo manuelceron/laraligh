@@ -1,5 +1,5 @@
 <?php
-namespace Vendor\Laraligh\Tests;
+namespace Manuelceron\Laraligh\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;

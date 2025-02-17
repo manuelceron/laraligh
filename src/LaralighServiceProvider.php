@@ -1,5 +1,5 @@
 <?php
-namespace Vendor\Laraligh;
+namespace Manuelceron\Laraligh;
 
 use Illuminate\Support\ServiceProvider;
 

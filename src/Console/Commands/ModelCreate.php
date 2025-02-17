@@ -1,5 +1,5 @@
 <?php
-namespace Vendor\Laraligh\Console\Commands;
+namespace Manuelceron\Laraligh\Console\Commands;
 
 use Illuminate\Console\Command;
 
