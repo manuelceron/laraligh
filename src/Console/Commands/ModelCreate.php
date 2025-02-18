@@ -1,5 +1,5 @@
 <?php
-namespace Manuelceron\Laraligh\Console\Commands;
+namespace Manuelceron\Laralight\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -126,15 +126,10 @@ class ModelCreate extends Command
     {
         // Pluralizar y convertir el nombre del modelo a snake_case
         $routeName = Str::plural(Str::snake($modelName));
-        
-        // Generar el contenido de la ruta
-        return "\nRoute::prefix('api/{$routeName}')->middleware('api')->group(function () {\n" .
-               "    Route::get('/', [App\\Http\\Controllers\\Api\\$controllerName::class, 'index']);\n" .
-               "    Route::get('{id}', [App\\Http\\Controllers\\Api\\$controllerName::class, 'show']);\n" .
-               "    Route::post('/', [App\\Http\\Controllers\\Api\\$controllerName::class, 'store']);\n" .
-               "    Route::put('{id}', [App\\Http\\Controllers\\Api\\$controllerName::class, 'update']);\n" .
-               "    Route::delete('{id}', [App\\Http\\Controllers\\Api\\$controllerName::class, 'destroy']);\n" .
-               "});\n";
+        $routeStub = file_get_contents(__DIR__ . '/stubs/route.stub');
+        $routeContent = str_replace('{{routeName}}', $routeName, $routeStub);
+        $routeContent = str_replace('{{controllerName}}', $controllerName, $routeContent);
+        return $routeContent;
     }
     
 }

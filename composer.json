@@ -1,10 +1,10 @@
 {
-    "name": "manuelceron/laraligh",
+    "name": "manuelceron/laralight",
     "description": "Un paquete Laravel para modelos dinámicos y generación de APIs ligeras.",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Manuelceron\\Laraligh\\": "src/"
+            "Manuelceron\\Laralight\\": "src/"
         }
     },
     "require": {
@@ -15,13 +15,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Manuelceron\\Laraligh\\LaralighServiceProvider"
+                "Manuelceron\\Laralight\\LaralighServiceProvider"
             ]
         }
     },
     "scripts": {
         "post-install-cmd": [
-            "php artisan vendor:publish --provider=\"Manuelceron\\Laraligh\\LaralighServiceProvider\""
+            "php artisan vendor:publish --provider=\"Manuelceron\\Laralight\\LaralightServiceProvider\""
         ]
     },
     "authors": [

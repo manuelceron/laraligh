@@ -1,0 +1,7 @@
+Route::prefix('api/{{routeName}}')->middleware('api')->group(function () {
+    Route::get('/', [App\\Http\\Controllers\\Api\\{{controllerName}}::class, 'index']);
+    Route::get('{id}', [App\\Http\\Controllers\\Api\\{{controllerName}}::class, 'show']);
+    Route::post('/', [App\\Http\\Controllers\\Api\\{{controllerName}}::class, 'store']);
+    Route::put('{id}', [App\\Http\\Controllers\\Api\\{{controllerName}}::class, 'update']);
+    Route::delete('{id}', [App\\Http\\Controllers\\Api\\{{controllerName}}::class, 'destroy']);
+});
